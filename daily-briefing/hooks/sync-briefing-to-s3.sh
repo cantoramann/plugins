@@ -1,0 +1,88 @@
+#!/bin/bash
+# sync-briefing-to-s3.sh
+#
+# PostToolUse hook: After a briefing markdown is written, upload it to S3
+# with YAML frontmatter prepended to match daily.cantoramann.com format.
+#
+# Expects JSON on stdin with tool_input.file_path from the Write tool.
+# Requires: AWS CLI configured (or AWS_ACCESS_KEY_ID/SECRET in env)
+
+set -euo pipefail
+
+# Ensure standard tools are on PATH
+export PATH="/usr/bin:/usr/local/bin:/bin:$HOME/.local/bin:$PATH"
+
+# Read hook input from stdin
+INPUT=$(cat)
+FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
+
+# Only process briefing markdown files (pattern: briefing-YYYY-MM-DD.md)
+if [[ ! "$FILE_PATH" =~ briefings/briefing-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$ ]]; then
+  exit 0
+fi
+
+# Extract date from filename (briefing-YYYY-MM-DD.md -> YYYY-MM-DD)
+BASENAME=$(basename "$FILE_PATH")
+DATE=$(echo "$BASENAME" | sed 's/briefing-\(.*\)\.md/\1/')
+
+# Validate file exists
+if [[ ! -f "$FILE_PATH" ]]; then
+  echo "File not found: $FILE_PATH" >&2
+  exit 0
+fi
+
+# Load env from repo root .env (one level above plugin dir)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_DIR="$(dirname "$SCRIPT_DIR")"
+REPO_ROOT="$(dirname "$PLUGIN_DIR")"
+ENV_FILE="$REPO_ROOT/.env"
+
+if [[ -f "$ENV_FILE" ]]; then
+  set -a
+  source "$ENV_FILE"
+  set +a
+fi
+
+# Check required env vars
+if [[ -z "${AWS_ACCESS_KEY_ID:-}" || -z "${AWS_SECRET_ACCESS_KEY:-}" || -z "${S3_BUCKET:-}" ]]; then
+  echo "Missing AWS credentials or S3_BUCKET. Skipping S3 upload." >&2
+  exit 0
+fi
+
+# Extract the first heading as title (# Daily Briefing — Saturday, March 7, 2026)
+FIRST_LINE=$(head -1 "$FILE_PATH")
+TITLE=$(echo "$FIRST_LINE" | sed 's/^# //')
+
+# Create temp file with frontmatter prepended
+TEMP_FILE=$(mktemp)
+trap 'rm -f "$TEMP_FILE"' EXIT
+
+cat > "$TEMP_FILE" << FRONTMATTER
+---
+title: "$TITLE"
+date: $DATE
+language: en
+author: "Can's Daily Briefing"
+---
+
+FRONTMATTER
+
+# Append original content (skip the first heading line since title is in frontmatter)
+tail -n +2 "$FILE_PATH" >> "$TEMP_FILE"
+
+# Upload to S3 matching the site's content structure: content/en/YYYY-MM-DD.md
+S3_KEY="content/en/${DATE}.md"
+
+aws s3 cp "$TEMP_FILE" "s3://${S3_BUCKET}/${S3_KEY}" \
+  --region "${AWS_REGION:-us-west-2}" \
+  --content-type "text/markdown; charset=utf-8" \
+  --cache-control "public, max-age=3600" \
+  2>&1
+
+if [[ $? -eq 0 ]]; then
+  echo "Briefing uploaded to s3://${S3_BUCKET}/${S3_KEY}"
+else
+  echo "S3 upload failed" >&2
+fi
+
+exit 0

@@ -1,0 +1,9 @@
+{
+  "name": "daily-briefing",
+  "description": "Multi-agent daily briefing combining hard news with intellectually curious cross-domain content, inspired by MIT Technology Review and Morning Brew",
+  "version": "0.1.0",
+  "author": {
+    "name": "Can Toraman"
+  },
+  "keywords": ["news", "briefing", "daily", "newsletter", "multi-agent"]
+}
