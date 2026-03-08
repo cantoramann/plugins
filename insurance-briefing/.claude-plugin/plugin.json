@@ -1,0 +1,9 @@
+{
+  "name": "insurance-briefing",
+  "description": "Daily intelligence briefing for Turkish insurance professionals — regulatory, market, industry, and cross-domain analysis with personalization",
+  "version": "0.1.0",
+  "author": {
+    "name": "Can Toraman"
+  },
+  "keywords": ["insurance", "sigorta", "briefing", "turkey", "multi-agent"]
+}

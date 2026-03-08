@@ -1,0 +1,12 @@
+# Example user profile — copy to user-{id}.yaml and customize
+name: Örnek Kullanıcı
+company: Örnek Sigorta A.Ş.
+company_type: insurance_company  # insurance_company | brokerage | reinsurer
+role: Genel Müdür Yardımcısı
+focus_areas:
+  - motor
+  - property_cat
+  - digital_distribution
+company_context: >
+  Kısa şirket açıklaması: büyüklük, ana branşlar,
+  stratejik odak, halka açıklık durumu.

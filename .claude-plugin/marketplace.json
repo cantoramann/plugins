@@ -8,6 +8,11 @@
       "name": "daily-briefing",
       "source": "./daily-briefing",
       "description": "Multi-agent daily briefing — 7 agents produce a curated news digest with hard news, cross-domain analysis, and a deep dive"
+    },
+    {
+      "name": "insurance-briefing",
+      "source": "./insurance-briefing",
+      "description": "Daily intelligence briefing for Turkish insurance professionals"
     }
   ]
 }
