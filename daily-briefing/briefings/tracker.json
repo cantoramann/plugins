@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-03-07",
-    "briefings_generated": 3
+    "last_updated": "2026-03-08",
+    "briefings_generated": 4
   },
   "stories": [
     {
@@ -33,28 +33,31 @@
       "headline": "Iran War Continues; Succession Crisis Underway; Strait of Hormuz Closed",
       "domain": "policy",
       "first_covered": "2026-03-02",
-      "last_covered": "2026-03-07",
-      "times_covered": 3,
+      "last_covered": "2026-03-08",
+      "times_covered": 4,
       "status": "developing",
       "key_facts": [
         "Joint U.S.-Israeli airstrikes Feb 28 killed Khamenei and 5+ senior officials",
         "Trump stated campaign could take 'four weeks or less'",
         "Iran retaliated with missiles on Kuwait, UAE, Saudi Arabia, Israel",
         "6 civilians killed in Beit Shemesh",
-        "Iran closed Strait of Hormuz (20% of global oil)",
+        "Strait of Hormuz effectively closed (20% of global oil)",
         "Iran struck Amazon data centers in UAE and Bahrain",
         "Senate rejected war powers resolution 47-53",
         "Container ship hit by projectile in Strait, engine fire",
         "Interim Leadership Council assumed transitional authority",
         "Mojtaba Khamenei (son) reported as frontrunner for Supreme Leader",
         "WTI crude surged past $90/barrel (35% weekly gain)",
-        "Brent crude above $94/barrel",
+        "Brent crude jumped to $83",
         "VLCC freight rates hit $423,736/day (94% increase)",
         "Trump demanded 'unconditional surrender' from Iran",
         "60% domestic opposition to war in polling",
-        "Democrats warn of depleted weapons stockpiles"
+        "Democrats warn of depleted weapons stockpiles",
+        "Insurance companies withdrew coverage for Strait transit",
+        "Qatar force majeure declared",
+        "Saudi Ras Tanura offline"
       ],
-      "last_known_state": "War continues with unclear endgame. Succession crisis underway. Strait closure holding. Oil above $90. VLCC freight at record highs. 60% domestic opposition. No de-escalation signals."
+      "last_known_state": "War continues with unclear endgame. Succession crisis underway. Strait closure holding via insurance withdrawal. Oil above $90 due to supply disruptions and risk premium. VLCC freight at record highs. 60% domestic opposition. No de-escalation signals."
     },
     {
       "id": "china-east-fusion-breakthrough",
@@ -63,7 +66,7 @@
       "first_covered": "2026-03-02",
       "last_covered": "2026-03-02",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Achieved stable plasma 50% above Greenwald limit using PWSO theory",
         "Published in Science Advances",
@@ -78,7 +81,7 @@
       "first_covered": "2026-03-02",
       "last_covered": "2026-03-02",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Q4 FY2026: $68.1B revenue (73% YoY)",
         "Full year: $215.9B",
@@ -96,7 +99,7 @@
       "first_covered": "2026-03-02",
       "last_covered": "2026-03-02",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Apple paying Google ~$1B/year for Gemini",
         "Gemini to power Apple Intelligence features",
@@ -111,7 +114,7 @@
       "first_covered": "2026-03-02",
       "last_covered": "2026-03-02",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "35% spending priority now travel/experiences",
         "24% of workforce paycheck-to-paycheck",
@@ -126,15 +129,16 @@
       "headline": "OpenAI Closes Record $110B Funding Round",
       "domain": "business-tech",
       "first_covered": "2026-03-02",
-      "last_covered": "2026-03-02",
-      "times_covered": 1,
+      "last_covered": "2026-03-08",
+      "times_covered": 2,
       "status": "covered",
       "key_facts": [
         "Amazon $50B, SoftBank $30B, Nvidia $30B",
-        "$730B valuation",
-        "Largest private funding round in history"
+        "$840B valuation",
+        "Largest private funding round in history",
+        "Covered again in context of AI race"
       ],
-      "last_known_state": "Round closed. Deployment of capital underway."
+      "last_known_state": "Round closed. Capital deployment underway. Valuation increased to $840B. Signals AI race escalation."
     },
     {
       "id": "china-two-sessions-five-year-plan",
@@ -165,8 +169,8 @@
       "headline": "Trump Tariffs Escalate to 15% Global; 24 States Sue; $130B Refunds Ordered",
       "domain": "policy-business",
       "first_covered": "2026-03-02",
-      "last_covered": "2026-03-07",
-      "times_covered": 3,
+      "last_covered": "2026-03-08",
+      "times_covered": 4,
       "status": "developing",
       "key_facts": [
         "Section 122 invocation, 150-day validity",
@@ -193,7 +197,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "KOSPI dropped 12.06% March 4, eclipsing 9/11 record",
         "18% two-day decline",
@@ -213,7 +217,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "$2B direct investment plus multibillion purchase commitment",
         "Silicon photonics for optical interconnects in AI data centers",
@@ -229,7 +233,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "MacBook Air M5: 4x AI performance, $1,099, 512GB base",
         "iPhone 17e: $599, A19 chip, 48MP, 1M token on-device context",
@@ -245,7 +249,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Bipartisan resolution by Kaine (D-VA) and Paul (R-KY) rejected",
         "Only Rand Paul crossed party lines",
@@ -261,7 +265,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Smaller packages paradoxically increase unit purchases",
         "Loss-aversion psychology: smaller portion = compromise, price increase = deprivation",
@@ -277,7 +281,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Gen Z rejecting purchase-as-self-improvement premise",
         "80% consumers prioritize value; quality/service drives retention",
@@ -309,7 +313,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "NOvA + T2K collaboration found stronger evidence",
         "Neutrinos and antineutrinos behave differently",
@@ -324,7 +328,7 @@
       "first_covered": "2026-03-04",
       "last_covered": "2026-03-04",
       "times_covered": 1,
-      "status": "covered",
+      "status": "archived",
       "key_facts": [
         "Hegseth ordered reallocation from climate programs",
         "$866.6B base defense budget",
@@ -338,27 +342,29 @@
       "headline": "Oil Surges Past $90—Largest Weekly Gain Since 1983",
       "domain": "business-policy",
       "first_covered": "2026-03-07",
-      "last_covered": "2026-03-07",
-      "times_covered": 1,
+      "last_covered": "2026-03-08",
+      "times_covered": 2,
       "status": "developing",
       "key_facts": [
         "WTI crude broke $90/barrel",
         "35% weekly gain—largest since futures trading began in 1983",
-        "Brent crude surged 30% to above $94/barrel",
+        "Brent crude jumped from $65 to $83 (27% spike)",
         "~20M barrels/day stranded in Persian Gulf",
         "9M barrels/day off market due to attacks and shutdowns",
         "Gasoline up 14% in one week to $3.41/gallon",
-        "VLCC freight rates hit $423,736/day (94% increase)"
+        "VLCC freight rates hit $423,736/day (94% increase)",
+        "Insurance withdrawal mechanism closed Strait of Hormuz",
+        "Ship routing via Cape of Good Hope adds 7,000 miles and $1.8M per journey cost"
       ],
-      "last_known_state": "Historic oil shock underway. Stagflation pricing in effect. Prolonged conflict could drive $100+ oil."
+      "last_known_state": "Historic oil shock underway. Stagflation pricing in effect. Insurance withdrawal mechanism proved faster than military blockade. Prolonged conflict could drive $100+ oil."
     },
     {
       "id": "us-jobs-report-feb-2026",
       "headline": "U.S. Jobs Report: -92K in February; Unemployment 4.4%",
       "domain": "business",
       "first_covered": "2026-03-07",
-      "last_covered": "2026-03-07",
-      "times_covered": 1,
+      "last_covered": "2026-03-08",
+      "times_covered": 2,
       "status": "developing",
       "key_facts": [
         "Economy lost 92,000 jobs vs expected +50,000",
@@ -366,9 +372,10 @@
         "Third monthly payroll decline in five months",
         "Healthcare down 28K due to Kaiser Permanente strike",
         "Average hourly earnings rose 0.4% monthly, 3.8% YoY",
-        "Creates textbook stagflation scenario with oil surge"
+        "Creates textbook stagflation scenario with oil surge",
+        "Recession warning flag raised"
       ],
-      "last_known_state": "Stagflation fears rising. Fed rate cuts likely. Consumer confidence fragile."
+      "last_known_state": "Stagflation fears rising. Fed rate cuts likely. Consumer confidence fragile. Recession warning signals visible."
     },
     {
       "id": "evo2-genetic-ai-model",
@@ -394,17 +401,21 @@
       "headline": "E-Shaped Economy: Wealth Inequality Fractured Into Three Classes",
       "domain": "culture-business",
       "first_covered": "2026-03-07",
-      "last_covered": "2026-03-07",
-      "times_covered": 1,
+      "last_covered": "2026-03-08",
+      "times_covered": 2,
       "status": "covered",
       "key_facts": [
         "Top 20% of households hold 72% of total wealth",
         "Gini coefficient at 60-year highs",
+        "High-income consumers +2.5% real income growth",
+        "Middle-income households flat real growth",
+        "Lower-income households +0.3% real growth",
+        "24% of workforce paycheck-to-paycheck",
         "High-income consumers flooding discount retailers (TJ Maxx, Costco)",
         "Lower-income households cutting back on essentials",
         "Real consumer spending growth expected to slow to 1.5% in 2026"
       ],
-      "last_known_state": "Trend analysis. Three-class economy with inverted status signals."
+      "last_known_state": "Trend analysis. Three-class economy with inverted status signals. Covered again with updated income growth divergence data."
     },
     {
       "id": "cursor-autonomous-agents",
@@ -443,17 +454,18 @@
       "headline": "Gen Z 2016 Nostalgia as Economic Anxiety Signal",
       "domain": "culture",
       "first_covered": "2026-03-07",
-      "last_covered": "2026-03-07",
-      "times_covered": 1,
+      "last_covered": "2026-03-08",
+      "times_covered": 2,
       "status": "covered",
       "key_facts": [
         "1.6M TikTok videos celebrating '2026 is the new 2016'",
         "Search volume spiked 450% in early January",
+        "TikTok searches all-time high",
         "Not aesthetic nostalgia—mourning affordability of pre-2016 internet",
         "2016 was last year of genuinely cheap digital services",
         "Correlates with tariff announcements and geopolitical shock"
       ],
-      "last_known_state": "Deep dive topic for March 7 briefing. Cultural signal of economic precarity."
+      "last_known_state": "Deep dive feature story for March briefings. Cultural signal of economic precarity. Covered again with emphasis on search all-time highs."
     },
     {
       "id": "blackrock-hlend-gate-closure",
@@ -586,6 +598,105 @@
         "Target market launch mid-2026"
       ],
       "last_known_state": "Commercial product announced. Launch mid-2026."
+    },
+    {
+      "id": "china-glm5-ai-model",
+      "headline": "China's GLM-5 Model Beats US AI on Benchmarks Using Domestic Chips",
+      "domain": "tech",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "covered",
+      "key_facts": [
+        "744B parameter model, 40B active per forward pass",
+        "Runs on 100,000 Huawei Ascend 910B chips, no NVIDIA",
+        "50.4% on Humanity's Last Exam, 77.8% on SWE benchmarks",
+        "Beats Claude Opus 4.5",
+        "$1/M input tokens vs $3.20 for US models",
+        "Signals complete technological decoupling"
+      ],
+      "last_known_state": "Model released. Demonstrates China can build state-of-the-art AI without US chips."
+    },
+    {
+      "id": "china-bci-strategic-priority",
+      "headline": "China Elevates Brain-Computer Interfaces to Strategic Priority",
+      "domain": "science-policy",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "$165M brain science fund announced",
+        "World-class BCI firms target by 2030",
+        "Major breakthroughs target by 2027",
+        "50+ clinical BCI trials completed"
+      ],
+      "last_known_state": "Strategic priority with explicit timelines and funding."
+    },
+    {
+      "id": "strait-hormuz-insurance-closure",
+      "headline": "Insurance Withdrawal Closes Strait of Hormuz More Effectively Than Military",
+      "domain": "business-policy",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "Insurance companies withdrew coverage for Strait transit",
+        "Ships can't get insured, transit stops",
+        "Rerouting via Cape of Good Hope adds 7,000 miles and $1.8M per journey",
+        "Financial infrastructure became the chokepoint, not military"
+      ],
+      "last_known_state": "Insurance mechanism closed strait. Financial intermediaries moved faster than military."
+    },
+    {
+      "id": "cancer-stress-cortisol-exploit",
+      "headline": "Cancer Cells Exploit Stress Response via Cortisol Pathway",
+      "domain": "science",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "Cancer cells produce cortisol-like signals to suppress immune response",
+        "Suppress Fas protein that tells damaged cells to die",
+        "Mifepristone (glucocorticoid receptor antagonist) reverses pathway in mice",
+        "Combination with anti-PD1 immunotherapy amplifies tumor shrinkage",
+        "Clinical trials combining mifepristone with immunotherapy launching"
+      ],
+      "last_known_state": "Deep dive topic. Clinical trials launching. Watch for 2027-2028 data."
+    },
+    {
+      "id": "biodiversity-turnover-slowdown",
+      "headline": "Biodiversity Loss Makes Ecosystems Less Adaptive — Turnover Slowed One-Third",
+      "domain": "science",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "covered",
+      "key_facts": [
+        "Species turnover slowed by ~33% since 1970",
+        "Slower turnover = less ecological resilience",
+        "Ecosystems calcify without new species colonizing niches",
+        "Creates ecological brittleness disguised as stability"
+      ],
+      "last_known_state": "Curiosity corner topic. Trend analysis."
+    },
+    {
+      "id": "pokemon-30th-anniversary",
+      "headline": "Pokemon Turns 30 — IP as Immortal Nostalgia Machinery",
+      "domain": "culture",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "covered",
+      "key_facts": [
+        "Nintendo split celebration into adult and family events",
+        "Millennials buying 2004 remakes",
+        "Children buying same cards from 1999",
+        "IP immortality through generational cycling"
+      ],
+      "last_known_state": "One More Thing topic. Cultural observation."
     }
   ]
 }

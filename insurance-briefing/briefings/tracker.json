@@ -1,7 +1,173 @@
 {
   "meta": {
-    "last_updated": null,
-    "briefings_generated": 0
+    "last_updated": "2026-03-08",
+    "briefings_generated": 1
   },
-  "stories": []
+  "stories": [
+    {
+      "id": "motor-insurance-coverage-limits-increase",
+      "headline": "Motor Sigortasında Teminat Limitleri %33 Arttı",
+      "domain": "motor",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "SEDDK 2026/6 circular issued",
+        "Coverage limits increased by 33%",
+        "Premium cap set at 2.75%"
+      ],
+      "last_known_state": "New regulatory circular implementing significant increases to motor insurance coverage limits with controlled premium cap"
+    },
+    {
+      "id": "january-premium-production-144-3-billion-tl",
+      "headline": "Prim Üretimi Ocak'ta 144.3 Milyar TL",
+      "domain": "market",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "covered",
+      "key_facts": [
+        "January premiums: 144.3 billion TL",
+        "Year-over-year growth: 25%",
+        "Market showing strong performance"
+      ],
+      "last_known_state": "Strong January premium production with double-digit YoY growth indicating market expansion"
+    },
+    {
+      "id": "eksist-central-claims-management-system",
+      "headline": "EKSİST Merkezi Hasar Yönetim Sistemi",
+      "domain": "operations",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "Central claims management system launching",
+        "Go-live date: April 1, 2026",
+        "Industry-wide system implementation"
+      ],
+      "last_known_state": "EKSİST central claims management system scheduled for imminent implementation across Turkish insurance market"
+    },
+    {
+      "id": "health-insurance-lifetime-renewal-guarantee",
+      "headline": "Sağlık Sigortasında Yaşam Boyu Yenileme Garantisi",
+      "domain": "health",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "Lifetime renewal guarantee introduced",
+        "Health insurance inflation: 29.26%",
+        "Enhanced consumer protections"
+      ],
+      "last_known_state": "New lifetime renewal guarantees implemented in health insurance amid significant inflation pressures"
+    },
+    {
+      "id": "reinsurance-market-capacity-normalization",
+      "headline": "Reasürans Piyasasında Kapasite Normalleşti",
+      "domain": "reinsurance",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "Reinsurance market capacity normalizing",
+        "Rates down 15% since January 1, 2026",
+        "Market stabilization occurring"
+      ],
+      "last_known_state": "Global reinsurance market experiencing significant rate reductions and capacity normalization in early 2026"
+    },
+    {
+      "id": "turkiye-sigorta-capital-increase-application",
+      "headline": "Türkiye Sigorta 10 Katlı Sermaye Artırımı",
+      "domain": "underwriting",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "Türkiye Sigorta capital increase application submitted",
+        "Capital increase: 5 billion to 50 billion TL",
+        "10-fold increase pending approval"
+      ],
+      "last_known_state": "Major capital increase application under regulatory review, representing significant expansion initiative"
+    },
+    {
+      "id": "istanbul-seismic-map-3d-mt-analysis",
+      "headline": "Istanbul Sismik Haritası 3D MT Analiz",
+      "domain": "catastrophe",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "3D magnetotelluric analysis of Istanbul seismic map",
+        "DASK repricing window opening",
+        "Catastrophe risk assessment updating"
+      ],
+      "last_known_state": "Updated seismic analysis supporting DASK repricing initiatives for catastrophe risk in Istanbul region"
+    },
+    {
+      "id": "hormuz-strait-war-risk-coverage-withdrawal",
+      "headline": "Hormuz Boğazı Savaş Riski",
+      "domain": "marine",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "P&I clubs withdrew war risk coverage",
+        "Approximately 150 ships stranded",
+        "Critical shipping disruption"
+      ],
+      "last_known_state": "Major maritime crisis with P&I coverage withdrawn in Hormuz Strait, affecting 150+ vessel operations"
+    },
+    {
+      "id": "eu-ai-directive-commercial-property-insurance",
+      "headline": "EU AI Direktifi Ticari Yapı Sigortası Etkisi",
+      "domain": "regulatory",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "developing",
+      "key_facts": [
+        "EU AI Directive implementation: December 2026",
+        "Commercial property insurance implications",
+        "Liability frameworks under review"
+      ],
+      "last_known_state": "EU AI directive approaching implementation with significant liability and coverage implications for insurers"
+    },
+    {
+      "id": "catastrophe-bonds-issuance-q1-2026",
+      "headline": "CAT Tahvil İhraçları Q1 2026",
+      "domain": "catastrophe",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "covered",
+      "key_facts": [
+        "Q1 2026 CAT bond issuance: $5.86 billion",
+        "Second busiest quarter on record",
+        "Strong risk transfer demand"
+      ],
+      "last_known_state": "Q1 2026 showing robust catastrophe bond market activity with second-highest quarterly volume"
+    },
+    {
+      "id": "global-property-insurance-rates-declining",
+      "headline": "Global Mülkiyet Sigortası Oranları Düşüşte",
+      "domain": "property",
+      "first_covered": "2026-03-08",
+      "last_covered": "2026-03-08",
+      "times_covered": 1,
+      "status": "covered",
+      "key_facts": [
+        "Global property insurance rates declining",
+        "Sharpest decline since 2014",
+        "Market-wide rate compression occurring"
+      ],
+      "last_known_state": "Significant global property insurance rate reductions marking steepest decline in over a decade"
+    }
+  ]
 }
