@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/insurance-briefing/hooks/sync-briefing-to-s3.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
