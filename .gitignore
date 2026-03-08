@@ -1,6 +1,5 @@
 # Secrets
 .env
 
-# Briefing outputs (generated, not source)
-daily-briefing/briefings/scouts/
-daily-briefing/briefings/editorial-plan-*.md
+# Briefing outputs (generated, not source — kept local only)
+**/briefings/
