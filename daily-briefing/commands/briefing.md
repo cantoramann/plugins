@@ -6,13 +6,15 @@ model: opus
 
 Generate today's daily briefing by orchestrating the multi-agent pipeline. Follow these stages exactly:
 
+**Storage note:** All generated files (briefings, tracker, scout reports) are saved to `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`. Agent definitions are read from `${CLAUDE_PLUGIN_ROOT}/agents/`.
+
 ## Stage 0: Load Memory (pre-processing)
 
 Before launching scouts, build the continuity context that all agents will need:
 
-1. **Read the story tracker:** Read `${CLAUDE_PLUGIN_ROOT}/briefings/tracker.json`. This contains every story previously covered, with dates, key facts, and current status. If the file doesn't exist or is empty, skip — this is the first briefing.
+1. **Read the story tracker:** Read `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/tracker.json`. This contains every story previously covered, with dates, key facts, and current status. If the file doesn't exist or is empty, skip — this is the first briefing.
 
-2. **Read the previous briefing:** Use Glob to find the most recent `briefing-*.md` file in `${CLAUDE_PLUGIN_ROOT}/briefings/`. Read it. If none exists, skip.
+2. **Read the previous briefing:** Use Glob to find the most recent `briefing-*.md` file in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`. Read it. If none exists, skip.
 
 3. **Build the continuity prompt:** From the tracker, extract:
    - Stories with status `"developing"` — these are ongoing and should be checked for updates
@@ -82,13 +84,13 @@ Wait for the composer to complete.
 ## Stage 4: Save, Update Tracker, and Deliver
 
 1. Take the composer's output (the complete markdown briefing)
-2. Save it as `briefing-YYYY-MM-DD.md` (using today's date) in `${CLAUDE_PLUGIN_ROOT}/briefings/`
+2. Save it as `briefing-YYYY-MM-DD.md` (using today's date) in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`
 
-3. **Update the story tracker:** Read the current `tracker.json`, then update it:
+3. **Update the story tracker:** Read the current `tracker.json` from `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/tracker.json`, then update it:
    - For each story in today's briefing that already exists in the tracker: increment `times_covered`, update `last_covered` to today, update `last_known_state` with the latest information, update `status` if appropriate (e.g., `"developing"` → `"resolved"` if the story reached a conclusion)
    - For each NEW story in today's briefing: add a new entry with `first_covered` and `last_covered` set to today, `times_covered: 1`, appropriate `status`, and `key_facts` extracted from the briefing
    - For stories already in the tracker that were NOT covered today: leave them unchanged, but if they are older than 7 days and status is `"covered"` (not `"developing"`), set status to `"archived"`
-   - Write the updated `tracker.json` back to `${CLAUDE_PLUGIN_ROOT}/briefings/tracker.json`
+   - Write the updated `tracker.json` back to `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/tracker.json`
 
 4. Present the file to the user with a brief summary of what's in today's briefing (2-3 sentences highlighting the lead story and the deep dive topic). If there are developing stories with updates, mention that.
 

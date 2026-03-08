@@ -6,13 +6,15 @@ model: opus
 
 Generate today's insurance briefing by orchestrating the multi-agent pipeline. Follow these stages exactly:
 
+**Storage note:** All generated files (briefings, tracker, scout reports, editorial plans, personalization) are saved to `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`. Agent definitions and reference materials are read from `${CLAUDE_PLUGIN_ROOT}/agents/` and `${CLAUDE_PLUGIN_ROOT}/references/`. User profiles are read from `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/profiles/` (with fallback to `${CLAUDE_PLUGIN_ROOT}/profiles/`).
+
 ## Stage 0: Load Memory (pre-processing)
 
 Before launching scouts, build the continuity context that all agents will need:
 
-1. **Read the story tracker:** Read `${CLAUDE_PLUGIN_ROOT}/briefings/tracker.json`. This contains every story previously covered, with dates, key facts, and current status. If the file doesn't exist or is empty, skip — this is the first briefing.
+1. **Read the story tracker:** Read `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/tracker.json`. This contains every story previously covered, with dates, key facts, and current status. If the file doesn't exist or is empty, skip — this is the first briefing.
 
-2. **Read the previous briefing:** Use Glob to find the most recent `briefing-*.md` file in `${CLAUDE_PLUGIN_ROOT}/briefings/`. Read it. If none exists, skip.
+2. **Read the previous briefing:** Use Glob to find the most recent `briefing-*.md` file in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`. Read it. If none exists, skip.
 
 3. **Build the continuity prompt:** From the tracker, extract:
    - Stories with status `"developing"` — these are ongoing and should be checked for updates
@@ -65,7 +67,7 @@ Once all scouts have returned their reports, launch the **cross-pollinator** age
 - Use `subagent_type: "general-purpose"` and include the system prompt from `${CLAUDE_PLUGIN_ROOT}/agents/cross-pollinator.md`
 - Use `model: "opus"` for this agent — editorial judgment requires the strongest reasoning
 
-Wait for the cross-pollinator to complete before proceeding. Save the editorial plan as `editorial-plan-YYYY-MM-DD.md` in `${CLAUDE_PLUGIN_ROOT}/briefings/`.
+Wait for the cross-pollinator to complete before proceeding. Save the editorial plan as `editorial-plan-YYYY-MM-DD.md` in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`.
 
 ## Stage 3: Compose the Briefing
 
@@ -80,29 +82,29 @@ Wait for the composer to complete.
 
 ## Stage 4: Personalize (conditional)
 
-Check if any user profiles exist: Glob for `${CLAUDE_PLUGIN_ROOT}/profiles/user-*.yaml`
+Check if any user profiles exist: Glob for `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/profiles/user-*.yaml` first, then fallback to `${CLAUDE_PLUGIN_ROOT}/profiles/user-*.yaml`
 
 **If profiles exist:**
 - Launch the **personalizer** agent using the Task tool
 - Pass the complete briefing + all profile file contents as input
 - Use `subagent_type: "general-purpose"` and include the system prompt from `${CLAUDE_PLUGIN_ROOT}/agents/personalizer.md`
 - Use `model: "sonnet"` — cost optimization
-- Wait for completion. Save output as `personalization-YYYY-MM-DD.json` in `${CLAUDE_PLUGIN_ROOT}/briefings/`
+- Wait for completion. Save output as `personalization-YYYY-MM-DD.json` in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`
 
 **If no profiles exist:** Skip this stage. Log that personalization was skipped.
 
 ## Stage 5: Save, Update Tracker, and Deliver
 
 1. Take the composer's output (the complete markdown briefing)
-2. Save it as `briefing-YYYY-MM-DD.md` (using today's date) in `${CLAUDE_PLUGIN_ROOT}/briefings/`
+2. Save it as `briefing-YYYY-MM-DD.md` (using today's date) in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`
 
-3. **Update the story tracker:** Read the current `tracker.json`, then update it:
+3. **Update the story tracker:** Read the current `tracker.json` from `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/tracker.json`, then update it:
    - For each story in today's briefing that already exists in the tracker: increment `times_covered`, update `last_covered` to today, update `last_known_state` with the latest information, update `status` if appropriate (e.g., `"developing"` → `"resolved"` if the story reached a conclusion)
    - For each NEW story in today's briefing: add a new entry with `first_covered` and `last_covered` set to today, `times_covered: 1`, appropriate `status`, and `key_facts` extracted from the briefing
    - For stories already in the tracker that were NOT covered today: leave them unchanged, but if they are older than 7 days and status is `"covered"` (not `"developing"`), set status to `"archived"`
-   - Write the updated `tracker.json` back to `${CLAUDE_PLUGIN_ROOT}/briefings/tracker.json`
+   - Write the updated `tracker.json` back to `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/tracker.json`
 
-4. **Also save scout reports** for reference: save each scout's output as `scouts/{scout-name}-YYYY-MM-DD.md` in `${CLAUDE_PLUGIN_ROOT}/briefings/`
+4. **Also save scout reports** for reference: save each scout's output as `scouts/{scout-name}-YYYY-MM-DD.md` in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`
 
 5. Present the briefing to the user with a brief summary of what's in today's briefing (2-3 sentences highlighting the lead story, the Radar topic, and any developing story updates). If personalization was run, mention that.
 
