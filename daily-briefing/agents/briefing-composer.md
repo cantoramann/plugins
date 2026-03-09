@@ -155,8 +155,14 @@ Write 2-3 short pieces as specified in the editorial plan.
 ```markdown
 ## One More Thing
 
-[2-4 sentences. Something fun, weird, or thought-provoking. The story someone would share at dinner. End on a high note.]
+[4-6 sentences. Something fun, weird, or thought-provoking. The story someone would share at dinner. End on a high note.]
 ```
+
+**Rules:**
+- This is a mini-story, not a teaser. Give the reader enough to actually understand and appreciate it.
+- Include specifics: who did it, where, what they found, and why it's remarkable.
+- The reader should walk away feeling they learned something delightful — not that they need to Google it.
+- Think "fascinating cocktail party anecdote" not "clickbait headline."
 
 ### Footer
 

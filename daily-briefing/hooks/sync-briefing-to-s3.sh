@@ -16,14 +16,21 @@ export PATH="/usr/bin:/usr/local/bin:/bin:$HOME/.local/bin:$PATH"
 INPUT=$(cat)
 FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
 
-# Only process briefing markdown files (pattern: briefing-YYYY-MM-DD.md)
-if [[ ! "$FILE_PATH" =~ briefings/briefing-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$ ]]; then
+# Only process briefing markdown files
+# Patterns: briefing-YYYY-MM-DD.md (English) or briefing-YYYY-MM-DD-tr.md (Turkish)
+if [[ ! "$FILE_PATH" =~ briefings/briefing-[0-9]{4}-[0-9]{2}-[0-9]{2}(-tr)?\.md$ ]]; then
   exit 0
 fi
 
-# Extract date from filename (briefing-YYYY-MM-DD.md -> YYYY-MM-DD)
+# Detect language and extract date from filename
 BASENAME=$(basename "$FILE_PATH")
-DATE=$(echo "$BASENAME" | sed 's/briefing-\(.*\)\.md/\1/')
+if [[ "$BASENAME" =~ -tr\.md$ ]]; then
+  LANG="tr"
+  DATE=$(echo "$BASENAME" | sed 's/briefing-\(.*\)-tr\.md/\1/')
+else
+  LANG="en"
+  DATE=$(echo "$BASENAME" | sed 's/briefing-\(.*\)\.md/\1/')
+fi
 
 # Validate file exists
 if [[ ! -f "$FILE_PATH" ]]; then
@@ -61,7 +68,7 @@ cat > "$TEMP_FILE" << FRONTMATTER
 ---
 title: "$TITLE"
 date: $DATE
-language: en
+language: $LANG
 author: "Can's Daily Briefing"
 ---
 
@@ -70,8 +77,8 @@ FRONTMATTER
 # Append original content (skip the first heading line since title is in frontmatter)
 tail -n +2 "$FILE_PATH" >> "$TEMP_FILE"
 
-# Upload to S3 matching the site's content structure: content/en/YYYY-MM-DD.md
-S3_KEY="content/en/${DATE}.md"
+# Upload to S3 matching the site's content structure: content/{lang}/YYYY-MM-DD.md
+S3_KEY="content/${LANG}/${DATE}.md"
 
 aws s3 cp "$TEMP_FILE" "s3://${S3_BUCKET}/${S3_KEY}" \
   --region "${AWS_REGION:-us-west-2}" \

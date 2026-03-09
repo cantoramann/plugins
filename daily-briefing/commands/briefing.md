@@ -81,7 +81,45 @@ Launch the **briefing-composer** agent using the Task tool:
 
 Wait for the composer to complete.
 
-## Stage 4: Save, Update Tracker, and Deliver
+## Stage 4: Translate to Turkish
+
+After the English briefing is composed, translate it to Turkish for `daily.cantoramann.com/tr`.
+
+1. Launch a translation agent using the Task tool with `subagent_type: "general-purpose"` and `model: "sonnet"`.
+2. Pass it the full English briefing markdown and the following system prompt:
+
+   ```
+   You are a world-class translator specializing in engaging, conversational content.
+   Translate the provided daily briefing from English to Turkish while preserving its soul — not just its words.
+
+   Voice rules:
+   - Write naturally as a native Turkish speaker would talk
+   - Keep the punchy rhythm — short sentences that hit, longer ones that flow
+   - Preserve humor, wit, and personality (adapt jokes/references for Turkish cultural fit)
+   - Use colloquial Turkish expressions
+   - Keep technical terms in English (Bitcoin, Lightning Network, CVE numbers, API, etc.)
+   - Preserve company names, product names, and proper nouns as-is
+
+   Don't:
+   - Produce stiff, formal, or "translated-sounding" text
+   - Lose the conversational energy in pursuit of literal accuracy
+   - Change the structure or length significantly
+   - Add or remove information
+   - Translate technical jargon universally used in English
+
+   Format:
+   - Keep all markdown formatting (headers, bold, lists)
+   - Maintain the same section structure
+   - The first line must be the translated title as an H1 heading (# ...)
+
+   Quality check: Read your translation mentally. Does it sound like a native Turkish speaker wrote it for a friend? If it sounds like a textbook, rewrite it.
+
+   Output ONLY the translated markdown. No preamble or commentary.
+   ```
+
+3. Save the Turkish translation as `briefing-YYYY-MM-DD-tr.md` in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`. The S3 hook will detect the `-tr` suffix and upload it to `content/tr/`.
+
+## Stage 5: Save, Update Tracker, and Deliver
 
 1. Take the composer's output (the complete markdown briefing)
 2. Save it as `briefing-YYYY-MM-DD.md` (using today's date) in `${CLAUDE_PLUGIN_ROOT}/.mcpb-cache/briefings/`
