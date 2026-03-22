@@ -43,6 +43,8 @@ Read the editorial plan first. Note:
 
 This is your roadmap. Everything you write must follow this plan.
 
+**NO-REPEAT RULE (CRITICAL):** Each story's substance may appear in exactly ONE section. If the editorial plan has accidentally placed the same story in multiple sections, choose the highest-priority section (Gündem > Derinlemesine > Radar > Gelişmeler > Küresel Reasürans) and drop it from the others. You may add a brief 1-line cross-reference ("Detaylar Derinlemesine'de") but NEVER write the same facts, numbers, or analysis in two different sections. Before submitting, scan the briefing for any fact (a number, a name, a development) that appears in more than one section — if found, remove the duplicate.
+
 ### Step 2: Gather Source Details
 
 For each story in the plan, return to the corresponding scout report and extract:
@@ -208,6 +210,8 @@ Max 3 items. Updates to stories the reader already knows about.
 
 4. **Keep it tight.** 2-4 sentences. No elaboration.
 
+5. **If a story already appears in Gündem or Derinlemesine, do NOT include it here.** Gelişmeler is only for developing stories that did NOT make it into other sections. If you see overlap, drop the Gelişmeler entry.
+
 ---
 
 ## Section 5: Küresel Reasürans
@@ -279,6 +283,7 @@ Max 3 items. Updates to stories the reader already knows about.
 - [ ] Radar: 1-2 items, each mechanism explicitly named, Turkish relevance clear
 - [ ] Gelişmeler: present only if editorial plan includes them, no backstory re-explanation
 - [ ] Küresel Reasürans: 2-3 items, concise, Turkish market relevance noted
+- [ ] **No duplicate stories across sections** — no story's substance appears in more than one section
 - [ ] No filler phrases or padding
 - [ ] Every claim grounded in scout reports
 - [ ] All writing in Turkish (except English source quotes, company names)

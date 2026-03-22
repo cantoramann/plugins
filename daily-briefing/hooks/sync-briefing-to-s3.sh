@@ -56,15 +56,40 @@ if [[ -z "${AWS_ACCESS_KEY_ID:-}" || -z "${AWS_SECRET_ACCESS_KEY:-}" || -z "${S3
   exit 0
 fi
 
-# Extract the first heading as title (# Daily Briefing — Saturday, March 7, 2026)
+# Detect if file already has YAML frontmatter (starts with ---)
 FIRST_LINE=$(head -1 "$FILE_PATH")
-TITLE=$(echo "$FIRST_LINE" | sed 's/^# //')
 
-# Create temp file with frontmatter prepended
 TEMP_FILE=$(mktemp)
 trap 'rm -f "$TEMP_FILE"' EXIT
 
-cat > "$TEMP_FILE" << FRONTMATTER
+if [[ "$FIRST_LINE" == "---" ]]; then
+  # File has existing frontmatter — extract title from it, then pass through as-is
+  TITLE=$(awk '/^---$/{n++; next} n==1 && /^title:/{gsub(/^title: *"?|"? *$/,"",$0); print; exit}' "$FILE_PATH")
+
+  if [[ -z "$TITLE" ]]; then
+    # Frontmatter exists but no title field — find the first H1 after frontmatter
+    TITLE=$(awk '/^---$/{n++; next} n>=2 && /^# /{sub(/^# /,""); print; exit}' "$FILE_PATH")
+  fi
+
+  # Rewrite frontmatter with canonical fields, preserve body
+  BODY_START=$(awk '/^---$/{n++} n==2{print NR; exit}' "$FILE_PATH")
+  BODY_START=$((BODY_START + 1))
+
+  cat > "$TEMP_FILE" << FRONTMATTER
+---
+title: "$TITLE"
+date: $DATE
+language: $LANG
+author: "Can's Daily Briefing"
+---
+FRONTMATTER
+
+  tail -n +"$BODY_START" "$FILE_PATH" >> "$TEMP_FILE"
+else
+  # No frontmatter — extract title from first H1 heading
+  TITLE=$(echo "$FIRST_LINE" | sed 's/^# //')
+
+  cat > "$TEMP_FILE" << FRONTMATTER
 ---
 title: "$TITLE"
 date: $DATE
@@ -74,8 +99,9 @@ author: "Can's Daily Briefing"
 
 FRONTMATTER
 
-# Append original content (skip the first heading line since title is in frontmatter)
-tail -n +2 "$FILE_PATH" >> "$TEMP_FILE"
+  # Skip the first heading line since title is now in frontmatter
+  tail -n +2 "$FILE_PATH" >> "$TEMP_FILE"
+fi
 
 # Upload to S3 matching the site's content structure: content/{lang}/YYYY-MM-DD.md
 S3_KEY="content/${LANG}/${DATE}.md"

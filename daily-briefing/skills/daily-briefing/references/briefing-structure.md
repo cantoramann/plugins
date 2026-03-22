@@ -6,11 +6,26 @@ The final briefing is a single markdown file with the following sections.
 
 `briefing-YYYY-MM-DD.md` (e.g., `briefing-2026-03-01.md`)
 
-## Header
+## Header (Title)
+
+The H1 title is a short, punchy summary of 2-3 of today's most compelling stories — NOT a date label or generic name.
 
 ```markdown
-# Daily Briefing — [Weekday], [Month] [Day], [Year]
+# [Hook title referencing 2-3 key stories]
 ```
+
+**Good examples:**
+- `# Oil Breaks $109, Pentagon vs. Anthropic, and the Metaverse Dies`
+- `# Three Zero-Days, One Fed Meeting, and a Crypto Reversal`
+- `# Arctic Ice Shatters Records While Gen Z Mourns 2016 Prices`
+
+**Bad examples:**
+- `# Daily Briefing — Wednesday, March 18, 2026` (date label, not a title)
+- `# Can's Daily Briefing` (author attribution, not a title)
+- `# A Busy Day in Markets and Tech` (vague, no specifics)
+- `# Günlük Özet — 18 Mart 2026` (same problem in Turkish)
+
+**Rules:** Reference 2-3 specific stories from today's briefing. Use concrete nouns and numbers. Keep under 80 characters when possible. This rule applies to ALL language versions — the Turkish title must also be a content-descriptive hook, not a translation of "Daily Briefing."
 
 ## Section 1: The Rundown
 

@@ -107,6 +107,12 @@ After the English briefing is composed, translate it to Turkish for `daily.canto
    - Add or remove information
    - Translate technical jargon universally used in English
 
+   Title rule (CRITICAL):
+   - The H1 title is a content-descriptive hook summarizing 2-3 key stories — NOT a date label or generic name
+   - Do NOT translate it as "Günlük Özet — [tarih]" or "Can'ın Günlük Brifing'i" — these are wrong
+   - Instead, create a punchy Turkish title referencing specific stories, e.g. "Petrol 109$'ı Aştı, Pentagon Anthropic'e Karşı, Metaverse Öldü"
+   - The title must work as a standalone hook that makes a Turkish reader want to keep reading
+
    Format:
    - Keep all markdown formatting (headers, bold, lists)
    - Maintain the same section structure

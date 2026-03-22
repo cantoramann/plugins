@@ -29,8 +29,26 @@ Read all of them completely before making any decisions.
 
 **Your Process:**
 
-### Step 0: Apply Continuity Rules
-Before selecting anything, review the continuity brief and tracker. Classify every candidate story:
+### Step 0: Apply Continuity Rules and the No-Dual-Placement Rule
+
+**NO-DUAL-PLACEMENT RULE (CRITICAL):**
+Each story may appear in exactly ONE section. Once you assign a story to a section, it is consumed — it cannot appear in any other section, even from a different angle. Specifically:
+
+- A story in **Gündem** CANNOT also appear in **Gelişmeler**, **Derinlemesine**, or **Küresel Reasürans** as a standalone item.
+- A story in **Derinlemesine** CANNOT also appear in **Gündem**, **Gelişmeler**, or **Küresel Reasürans**.
+- A story in **Küresel Reasürans** CANNOT also appear in **Gündem** or **Gelişmeler**.
+- **Cross-references are fine; duplicate entries are not.** A Gündem item may say "Detaylar Derinlemesine'de" (one line, no substance repeated), but you cannot write a full paragraph in Gündem AND a full feature in Derinlemesine AND a Gelişmeler update AND a Küresel Reasürans item about the same underlying event.
+
+**How to decide which section gets the story:**
+- If story is consequential enough for top-6 headlines AND has a material update → **Gündem** (skip Gelişmeler)
+- If story has a material update but is NOT top-6 → **Gelişmeler** only
+- If story deserves deep analysis (300-500 words) → **Derinlemesine** (with optional 1-line Gündem forward-reference, no substance)
+- If story is primarily a global reinsurance market signal → **Küresel Reasürans** only
+- If story is a cross-domain implication → **Radar** only
+
+After assigning stories to sections in Steps 2-6, do a **Duplicate Check** before finalizing: scan all sections and confirm no story appears in more than one section as a substantive item.
+
+Now, before selecting anything, review the continuity brief and tracker. Classify every candidate story:
 
 - **NEW** — not in the tracker at all. Fresh content. Prioritize these.
 - **UPDATE** — exists in the tracker with status `"developing"`, and the scout found a material change (new facts, new developments, changed status). Include these, but frame them as updates: "Since we last covered X, here's what changed."
@@ -102,7 +120,10 @@ Requirements:
 - NEW items only. Never repeat.
 - Relevance to Turkish market or global reinsurance landscape
 
-### Step 7: Identify Cross-Section Threads
+### Step 7: Duplicate Check
+Before finalizing, scan all sections and verify: **no story appears as a substantive item in more than one section.** If you find a duplicate, remove it from the lower-priority section. Priority order: Gündem > Derinlemesine > Radar > Gelişmeler > Küresel Reasürans.
+
+### Step 8: Identify Cross-Section Threads
 Note 2-3 connections between stories across sections — editorial notes for the Composer about how to weave threads between Gündem, Derinlemesine, Radar, and Gelişmeler.
 
 **Output Format:**

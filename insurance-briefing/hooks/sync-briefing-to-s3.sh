@@ -36,14 +36,37 @@ if [[ "$FILE_PATH" =~ briefings/briefing-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$ ]]; the
     exit 0
   fi
 
-  # Extract title, create frontmatter, upload
+  # Extract title and create upload file with frontmatter
   FIRST_LINE=$(head -1 "$FILE_PATH")
-  TITLE=$(echo "$FIRST_LINE" | sed 's/^# //')
-
   TEMP_FILE=$(mktemp)
   trap 'rm -f "$TEMP_FILE"' EXIT
 
-  cat > "$TEMP_FILE" << FRONTMATTER
+  if [[ "$FIRST_LINE" == "---" ]]; then
+    # File has existing frontmatter — extract title from it
+    TITLE=$(awk '/^---$/{n++; next} n==1 && /^title:/{gsub(/^title: *"?|"? *$/,"",$0); print; exit}' "$FILE_PATH")
+
+    if [[ -z "$TITLE" ]]; then
+      TITLE=$(awk '/^---$/{n++; next} n>=2 && /^# /{sub(/^# /,""); print; exit}' "$FILE_PATH")
+    fi
+
+    BODY_START=$(awk '/^---$/{n++} n==2{print NR; exit}' "$FILE_PATH")
+    BODY_START=$((BODY_START + 1))
+
+    cat > "$TEMP_FILE" << FRONTMATTER
+---
+title: "$TITLE"
+date: $DATE
+language: tr
+author: "Sigorta Brifing"
+---
+FRONTMATTER
+
+    tail -n +"$BODY_START" "$FILE_PATH" >> "$TEMP_FILE"
+  else
+    # No frontmatter — extract title from first H1 heading
+    TITLE=$(echo "$FIRST_LINE" | sed 's/^# //')
+
+    cat > "$TEMP_FILE" << FRONTMATTER
 ---
 title: "$TITLE"
 date: $DATE
@@ -53,7 +76,8 @@ author: "Sigorta Brifing"
 
 FRONTMATTER
 
-  tail -n +2 "$FILE_PATH" >> "$TEMP_FILE"
+    tail -n +2 "$FILE_PATH" >> "$TEMP_FILE"
+  fi
 
   S3_KEY="content/insurance/tr/${DATE}.md"
 

@@ -26,7 +26,7 @@ Every briefing must serve both. Headlines and feature stories serve the pragmati
 
 ## Pipeline Architecture
 
-The briefing is produced by a 3-stage multi-agent pipeline:
+The briefing is produced by a 4-stage multi-agent pipeline (English + Turkish):
 
 ### Stage 1: Domain Scouts (parallel)
 
@@ -53,6 +53,10 @@ A single agent receives all scout outputs and performs editorial curation:
 ### Stage 3: Briefing Composer
 
 A single agent takes the editorial plan and writes the final markdown briefing with consistent voice and structure.
+
+### Stage 4: Turkish Translation
+
+After the English briefing is composed, it is translated to Turkish for `daily.cantoramann.com/tr`. A translation agent converts the full briefing while preserving its voice, rhythm, and personality — writing as a native Turkish speaker would, not as a textbook translation. Technical terms stay in English. The output is saved as `briefing-YYYY-MM-DD-tr.md`.
 
 ## Briefing Sections
 
