@@ -62,6 +62,10 @@ Write 5-6 headline items as specified in the editorial plan.
 - No throat-clearing. Start with the news, not background.
 - "So what" must be specific, not generic. "This matters because it affects X" not "This is significant."
 - Use numbers when available. "$2.3B" is better than "billions."
+- **Respect coverage tiers from the editorial plan:**
+  - **Tier 1 (NEW or 1-2× covered):** Full context. Write as self-contained.
+  - **Tier 2 (3× covered):** One sentence of background max, then the new development.
+  - **Tier 3 (4+× covered):** **Zero background.** The reader has seen this story many times. Open directly with what changed. Do NOT restate any facts listed in the "DO NOT RESTATE" note from the editorial plan. If the editorial plan says "DO NOT RESTATE: Strait handles 20% of oil," then the phrase "20% of global oil" must not appear.
 
 ### Section 2: Feature Stories
 
@@ -81,7 +85,8 @@ Write 2-3 self-contained articles as specified in the editorial plan.
 ```
 
 **Rules:**
-- Each article is self-contained. Don't assume the reader read the headlines.
+- For NEW stories, each article is self-contained. Don't assume the reader read the headlines.
+- For **Tier 2-3 UPDATE** stories, do NOT make the article self-contained. The reader already knows the backstory. Open with the new development, not a recap. One linking sentence at most ("The helium shortage we've been tracking just got worse —") then straight to what's new.
 - Include at least one specific fact, number, or quote per article.
 - End each article with a forward-looking sentence — what to watch for.
 
@@ -197,6 +202,8 @@ Before outputting the briefing, verify:
 - [ ] No filler phrases
 - [ ] Every claim is grounded in a specific fact from the scout reports
 - [ ] No story is repeated from a previous briefing without new information
+- [ ] **Tier 3 stories contain ZERO background scaffolding** — no restated facts from the "DO NOT RESTATE" list
+- [ ] No single contextual phrase (e.g., "20% of global oil") appears in more than 2 briefings total — if you've used it before, find a different way to say it or omit it
 - [ ] The briefing ends memorably
 
 Write the final briefing as a markdown file.

@@ -20,6 +20,10 @@ Before launching scouts, build the continuity context that all agents will need:
    - Stories with status `"developing"` — these are ongoing and should be checked for updates
    - Stories covered in the last 3 days — these should not be repeated unless there's a material update
    - The previous briefing's deep dive topic — avoid repeating the same deep dive angle
+   - **Coverage tier** for each developing story based on `times_covered`:
+     - **Tier 1 (1-2×):** Normal coverage. Full context allowed.
+     - **Tier 2 (3×):** Light context. One sentence of background max.
+     - **Tier 3 (4+×):** **BACKGROUND-FREE.** Assume the reader knows the story. Lead with what's new. Zero scaffolding. Do NOT re-explain what the Strait of Hormuz is, what percentage of oil flows through it, or any other fact already reported in prior briefings.
 
    Format this as a concise **continuity brief** (aim for under 800 words) that will be passed to scouts and the cross-pollinator. Structure:
 
@@ -27,7 +31,7 @@ Before launching scouts, build the continuity context that all agents will need:
    ## Continuity Brief
 
    ### Developing Stories (check for updates)
-   - [story id]: [headline]. Last covered [date]. Last known state: [state]. Key facts already reported: [facts].
+   - [story id]: [headline]. Last covered [date]. **Times covered: [N] → Tier [1/2/3].** Last known state: [state]. Key facts already reported: [facts].
    ...
 
    ### Recently Covered (do NOT repeat unless material update)
@@ -37,6 +41,8 @@ Before launching scouts, build the continuity context that all agents will need:
    ### Previous Deep Dive
    - Topic: [topic]. Covered [date]. Do not reuse this angle.
    ```
+
+   **IMPORTANT:** For Tier 3 stories, the continuity brief must explicitly list the background facts that should NOT be restated (e.g., "Do NOT re-explain: Strait handles 20% of global oil, Khamenei was killed in Feb strikes, insurance withdrawal closed shipping"). This gives the composer a concrete exclusion list.
 
 ## Stage 1: Launch Domain Scouts (parallel)
 

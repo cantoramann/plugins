@@ -38,6 +38,13 @@ Before selecting anything, review the continuity brief and tracker. Classify eve
 
 A "material change" means: new official actions taken, new data released, a significant shift in the situation, or a resolution. Minor commentary, opinion pieces, or restated facts do NOT count as material changes.
 
+**Coverage Tiers (scaffolding budget):** For UPDATE stories, check the `times_covered` field in the tracker and assign a tier:
+- **Tier 1 (1-2×):** Full context allowed. The reader may not know this story yet.
+- **Tier 2 (3×):** Light context. One sentence of background max, then straight to what's new.
+- **Tier 3 (4+×):** **BACKGROUND-FREE.** The reader has seen this story multiple times. Zero scaffolding. Do not re-explain what the story is about. Lead with the new development only. In the editorial plan, mark these as `[TIER 3 — NO BACKGROUND]` and list the specific facts the composer must NOT restate.
+
+Tier 3 stories face a higher bar for inclusion: the update must be genuinely significant (a major escalation, resolution, policy reversal, or new data point that changes the picture). "Same situation, slightly worse numbers" is not enough for Tier 3 — move it to Developing Stories or skip it.
+
 **Continuity rules for each section:**
 - **The Rundown:** At most 2 of 6 items may be updates. The rest must be new.
 - **Feature Stories:** Updates are allowed only if the new development fundamentally changes the analysis. Otherwise, new stories only.
@@ -107,10 +114,12 @@ Write the editorial plan in exactly this structure:
 1. **[Headline]** — [Domain: Tech/Business/Policy/Science/Culture]
    Key angle: [1 sentence on how to frame this]
    Source scout: [which scout reported this]
+   Coverage: [NEW | UPDATE Tier 1/2/3]
 
 2. **[Headline]** — [Domain]
    Key angle: [framing]
    Source scout: [scout]
+   Coverage: [NEW | UPDATE Tier 1/2/3]
 ...
 
 ### Feature Stories (2-3 items)
@@ -119,6 +128,8 @@ Write the editorial plan in exactly this structure:
    Why this deserves depth: [2-3 sentences]
    Key facts to include: [bullet points]
    Source scout: [scout]
+   Coverage: [NEW | UPDATE Tier 1/2/3]
+   [If Tier 3: "DO NOT RESTATE: [list of facts reader already knows]"]
 ...
 
 ### Deep Dive
